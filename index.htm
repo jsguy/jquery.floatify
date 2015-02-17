@@ -1,0 +1,140 @@
+<html>
+<head>
+	<title></title>
+	<script src="jquery-1.11.2.min.js"></script>
+	<script src="jquery.floatify.js"></script>
+	<style>
+		.cf:before, .cf:after 	{ content: " ";display: table;}
+		.cf:after 				{ clear: both; }
+		.cf 					{ *zoom: 1; }
+
+		.cell 			{ display: inline-block; float: left; border: 1px solid #ccc; padding: 0.2em; margin: 0;} 
+		.c1 			{ width: 10em }
+		.c2 			{ width: 14em }
+		.c3 			{ width: 6em }
+
+		.surround 		{ display: inline-block; margin-left: 200px;}
+		.header 		{ background: #333; color: #fff; }
+
+        .floatingHeader {position: fixed; top:0; visibility: hidden; z-index: 1000; opacity: 0.9;}
+        .floatingHeader.settleDown {position: static; visibility: visible; margin-top: 0; opacity: 1;}
+        code pre 		{ background: #333; color: #fff; border-radius: 4px; border: 1px solid #000; display: inline-block; padding: 1em 2em; }
+	</style>
+</head>
+<body>
+
+	<h1 id="top">jquery.floatify</h1>
+	<p>
+		This can create a floating header from a table header or div - it uses a technique that ensures that events are still bound correctly to elements within the header or div.
+	</p>
+
+	<h2>Usage</h2>
+
+	<code><pre>$(".surround").floatify(".myHeader");</pre></code>
+
+	<p>
+		This means within ".surround", make any ".myHeader" a floating header
+	</p>
+
+	<h2>Example div</h2>
+
+	<p>
+		Scroll the page to see the headers being floated
+	</p>
+
+	<div class="surround cf">
+
+		<div class="header myHeader cf">
+			<div class="cell c1 head">Head 1</div><div class="cell c2 head">Head 2</div><div class="cell c3 head">Head 3</div>
+		</div>
+
+		<div class="body">
+			<div class="row cf">
+				<div class="cell c1">Cell 1</div><div class="cell c2">Cell 2</div><div class="cell c3">Cell 3</div> 
+			</div>
+			<div class="row cf">
+				<div class="cell c1">Cell 1</div><div class="cell c2">Cell 2</div><div class="cell c3">Cell 3</div> 
+			</div>
+			<div class="row cf">
+				<div class="cell c1">Cell 1</div><div class="cell c2">Cell 2</div><div class="cell c3">Cell 3</div> 
+			</div>
+			<div class="row cf">
+				<div class="cell c1">Cell 1</div><div class="cell c2">Cell 2</div><div class="cell c3">Cell 3</div> 
+			</div>
+			<div class="row cf">
+				<div class="cell c1">Cell 1</div><div class="cell c2">Cell 2</div><div class="cell c3">Cell 3</div> 
+			</div>
+			<div class="row cf">
+				<div class="cell c1">Cell 1</div><div class="cell c2">Cell 2</div><div class="cell c3">Cell 3</div> 
+			</div>
+			<div class="row cf">
+				<div class="cell c1">Cell 1</div><div class="cell c2">Cell 2</div><div class="cell c3">Cell 3</div> 
+			</div>
+			<div class="row cf">
+				<div class="cell c1">Cell 1</div><div class="cell c2">Cell 2</div><div class="cell c3">Cell 3</div> 
+			</div>
+		</div>
+
+	</div>
+
+	<br/>
+
+	<h2>Example table</h2>
+
+	<table class="surround cf">
+
+		<thead class="header myHeader cf">
+			<th class="cell c1 head">2 Head 1</th><th class="cell c2 head">2 Head 2 <button id="testButton">test</button></th><th class="cell c3 head">2 Head 3</th>
+		</thead>
+
+		<tbody class="body">
+			<tr class="row cf">
+				<td class="cell c1">Cell 1</td><td class="cell c2">Cell 2</td><td class="cell c3">Cell 3</td> 
+			</tr>
+			<tr class="row cf">
+				<td class="cell c1">Cell 1</td><td class="cell c2">Cell 2</td><td class="cell c3">Cell 3</td> 
+			</tr>
+			<tr class="row cf">
+				<td class="cell c1">Cell 1</td><td class="cell c2">Cell 2</td><td class="cell c3">Cell 3</td> 
+			</tr>
+			<tr class="row cf">
+				<td class="cell c1">Cell 1</td><td class="cell c2">Cell 2</td><td class="cell c3">Cell 3</td> 
+			</tr>
+			<tr class="row cf">
+				<td class="cell c1">Cell 1</td><td class="cell c2">Cell 2</td><td class="cell c3">Cell 3</td> 
+			</tr>
+			<tr class="row cf">
+				<td class="cell c1">Cell 1</td><td class="cell c2">Cell 2</td><td class="cell c3">Cell 3</td> 
+			</tr>
+			<tr class="row cf">
+				<td class="cell c1">Cell 1</td><td class="cell c2">Cell 2</td><td class="cell c3">Cell 3</td> 
+			</tr>
+			<tr class="row cf">
+				<td class="cell c1">Cell 1</td><td class="cell c2">Cell 2</td><td class="cell c3">Cell 3</td> 
+			</tr>
+		</tbody>
+
+	</table>
+
+	<p style="width: 2000px">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit temporibus quibusdam sed adipisci doloremque exercitationem dolorem vitae. Eaque, architecto, et culpa labore voluptas blanditiis doloribus error perferendis deserunt sed ad.
+	</p>
+
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+	<a href="#top">Back to top</a>
+
+	<script>
+		$(function(){
+			//	Within .surround, make .myHeader a floating header
+			$(".surround").floatify(".myHeader");
+
+			//	Our test event - to show that it is preserved
+			$('#testButton').click(function(){
+				console.log($(this).parent());
+			});
+		});
+	</script>
+
+</body>
+</html>
